@@ -49,6 +49,10 @@ h6 {
 		width:500px;
 	}
 }
+#img-enlarge{
+	height:100%;
+	width:100%
+}
 header{
   background: #315AAE;
   color: white;
@@ -205,4 +209,7 @@ footer .footer-col {
 .section-div {
 	background:#dedee0;
 	padding-bottom:25px;
+}
+.tooltip-inner {
+	font-size:15px;
 }

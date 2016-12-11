@@ -3,7 +3,16 @@
     "use strict"; // Start of use strict
 	
 	var header_off = $('header').height();
-
+	
+	// Create tooltip and attach them to sample images
+	$('.img-sample').attr({
+		"data-toggle":"tooltip",
+		"data-placement":"top",
+		"title":"click to enlarge"});
+	$('[data-toggle="tooltip"]').tooltip();
+	
+	// Create sample image modal and append to body
+	$('body').append('<div class="modal fade bs-example-modal-lg img-enlarge-modal"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><img id="img-enlarge" src="#"></src></div></div></div>');
 
     // jQuery for page scrolling feature
     $('.page-scroll a').bind('click', function(event) {
@@ -47,6 +56,13 @@
 		$('html,body').animate({
 			scrollTop: $('.contact-footer').offset().top
 		});
+	});
+	
+	// Click sample image to enlarge
+	$('.img-sample').click(function() {
+		var imgSrc = $(this).attr('src');
+		$('#img-enlarge').attr('src', imgSrc);
+		$('.img-enlarge-modal').modal('show');
 	});
 
 })(jQuery); // End of use strict
